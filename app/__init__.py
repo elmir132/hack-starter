@@ -1,0 +1,1 @@
+"""Hack Starter example application."""
