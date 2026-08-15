@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="A small, honest hackathon starter: turn an idea into a testable first brief.">
+  <title>Hack Starter · Brief builder</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Hack Starter home">
+      <span class="brand-symbol">H<span>/</span></span>
+      <span>HACK<span class="brand-light">STARTER</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="nav-active" href="#builder">Brief builder</a>
+      <a href="#approach">How this works</a>
+    </nav>
+    <div class="connection"><span class="connection-dot" id="connection-dot"></span><span id="connection-label">Checking demo mode…</span></div>
+  </header>
+
+  <main class="page" id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-square"></span> YOUR HACKATHON STARTING LINE</p>
+        <h1>Make the first version<br><span>small enough to test.</span></h1>
+        <p class="hero-subtitle">Turn a raw idea into a one-page brief, an MVP cut, and a first user test. Start with the problem; keep the claims honest.</p>
+      </div>
+    <div class="hero-mark" aria-hidden="true">
+        <span class="mark-ring ring-one"></span><span class="mark-ring ring-two"></span><span class="mark-center">01</span>
+        <span class="mark-caption">IDEA → EVIDENCE</span>
+      </div>
+    </section>
+
+    <div class="preview-banner" id="preview-banner">
+      <span class="banner-icon">↗</span>
+      <p><strong>Starter baseline.</strong> This example uses fixed templates—no model call, no outside research, and no saved submissions. Replace the baseline when your project needs more.</p>
+      <button type="button" id="banner-close" aria-label="Dismiss note">×</button>
+    </div>
+
+    <section class="workspace" id="builder">
+      <div class="builder-card card">
+        <div class="card-heading">
+          <div><span class="step-label"><b>01</b> / PROJECT INPUT</span><h2>What are you building?</h2></div>
+          <button type="button" class="example-button" id="sample-button"><span>✳</span> Load an example</button>
+        </div>
+        <p class="card-description">A few plain sentences are enough. You can refine the brief after your first conversation.</p>
+        <form id="brief-form">
+          <label for="project-name">Project name <span>required</span></label>
+          <input id="project-name" name="project_name" minlength="2" maxlength="60" placeholder="e.g. Campus Cart" required>
+          <div class="field-row">
+            <div><label for="audience">Who has this problem? <span>required</span></label><input id="audience" name="audience" minlength="2" maxlength="120" placeholder="e.g. students living on campus" required></div>
+            <div><label for="problem">What's hard today? <span>required</span></label><input id="problem" name="problem" minlength="3" maxlength="240" placeholder="e.g. finding a ride home after late labs" required></div>
+          </div>
+          <label for="approach">Your first idea <span>required</span></label>
+          <textarea id="approach" name="approach" minlength="3" maxlength="240" rows="3" placeholder="e.g. match students with open seats heading the same way" required></textarea>
+          <div class="form-bottom">
+            <span class="input-count" id="input-count">0 / 240</span>
+            <button class="primary-button" type="submit" id="build-button">Draft my brief <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="form-error" id="form-error" role="alert"></p>
+        </form>
+      </div>
+
+      <section class="output-card card" aria-labelledby="output-title">
+        <div class="output-topline">
+          <span class="step-label"><b>02</b> / FIRST DRAFT</span>
+          <span class="draft-mode" id="draft-mode"><span class="draft-mode-dot"></span> STATIC SAMPLE</span>
+        </div>
+        <div class="output-empty hidden" id="output-empty">
+          <div class="empty-stamp">↘</div>
+          <h2>Your brief will land here.</h2>
+          <p>Start with a person, a real problem, and one testable first step.</p>
+        </div>
+        <div class="brief-output" id="brief-output" aria-live="polite">
+          <p class="brief-name" id="brief-name">Campus Cart</p>
+          <h2 class="one-liner" id="one-liner"></h2>
+          <div class="brief-section"><span class="section-number">A</span><div><h3>Problem to test</h3><p id="problem-statement"></p></div></div>
+          <div class="brief-section"><span class="section-number">B</span><div><h3>Hypothesis</h3><p id="hypothesis"></p></div></div>
+          <div class="brief-section"><span class="section-number">C</span><div><h3>Cut the first build to</h3><ul class="mvp-list" id="mvp-list"></ul></div></div>
+          <div class="first-test">
+            <div class="test-top"><span class="test-symbol">↗</span><div><span class="test-label">FIRST TEST</span><h3 id="test-method"></h3></div></div>
+            <p id="test-task"></p>
+            <div class="success-signal"><span class="signal-dot"></span><span id="test-signal"></span></div>
+          </div>
+          <div class="questions-block"><h3>Ask before you build</h3><ol id="question-list"></ol></div>
+          <div class="assumption-box"><span class="assumption-icon">!</span><div><strong>Assumptions, not facts</strong><ul id="assumption-list"></ul></div></div>
+          <p class="honesty-note" id="output-notice"></p>
+        </div>
+        <button class="copy-button" id="copy-button" type="button"><span>▣</span> Copy brief</button>
+      </section>
+    </section>
+
+    <section class="workflow" id="approach">
+      <div class="workflow-heading"><span class="step-label"><b>03</b> / THE WORKFLOW</span><h2>Decide what to learn<br>before you decide what to ship.</h2></div>
+      <div class="workflow-steps">
+        <article><span class="workflow-number">01</span><h3>Start with a person</h3><p>Name a reachable group and ask about a recent moment, not a hypothetical feature wishlist.</p></article>
+        <article><span class="workflow-number">02</span><h3>Cut the demo</h3><p>Show only the smallest flow that lets someone try the core idea and get one useful outcome.</p></article>
+        <article><span class="workflow-number">03</span><h3>Keep the receipt</h3><p>Record who tried it, what happened, and what changed. A demo is not proof of demand.</p></article>
+      </div>
+    </section>
+
+    <footer class="footer"><span class="footer-brand"><span class="brand-symbol tiny">H<span>/</span></span> HACK STARTER</span><span>Small scope. Clear evidence. Honest demo.</span><span>See HONESTY_CHECKLIST.md</span></footer>
+  </main>
+</body>
+</html>
