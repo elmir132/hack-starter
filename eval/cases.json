@@ -1,0 +1,47 @@
+[
+  {
+    "input": {
+      "project_name": "Campus Cart",
+      "audience": "students living on campus",
+      "problem": "finding a ride home after late labs",
+      "approach": "find a ride home by matching with an open seat heading the same way"
+    },
+    "must_include": ["Campus Cart", "students living on campus", "finding a ride home after late labs", "find a ride home by matching with an open seat heading the same way"]
+  },
+  {
+    "input": {
+      "project_name": "Permit Pal",
+      "audience": "volunteer football organizers",
+      "problem": "missing field permit renewal dates",
+      "approach": "keep RSVP counts and permit reminders on one page"
+    },
+    "must_include": ["Permit Pal", "volunteer football organizers", "missing field permit renewal dates", "keep RSVP counts and permit reminders on one page"]
+  },
+  {
+    "input": {
+      "project_name": "Quiet Queue",
+      "audience": "students who need a low-noise study seat",
+      "problem": "finding a quiet place between classes",
+      "approach": "show available study rooms and their noise level"
+    },
+    "must_include": ["Quiet Queue", "students who need a low-noise study seat", "finding a quiet place between classes", "show available study rooms and their noise level"]
+  },
+  {
+    "input": {
+      "project_name": "Repair Loop",
+      "audience": "apartment residents with small repair issues",
+      "problem": "not knowing whether a maintenance request was received",
+      "approach": "give each repair request a visible status and next step"
+    },
+    "must_include": ["Repair Loop", "apartment residents with small repair issues", "not knowing whether a maintenance request was received", "give each repair request a visible status and next step"]
+  },
+  {
+    "input": {
+      "project_name": "Source Note",
+      "audience": "students preparing a short research presentation",
+      "problem": "losing the source behind a claim in a shared slide deck",
+      "approach": "attach a quote and source link to every key claim"
+    },
+    "must_include": ["Source Note", "students preparing a short research presentation", "losing the source behind a claim in a shared slide deck", "attach a quote and source link to every key claim"]
+  }
+]
