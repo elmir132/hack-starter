@@ -1,0 +1,6 @@
+{
+  "project_name": "Campus Cart",
+  "audience": "students living on campus",
+  "problem": "finding a ride home after late labs",
+  "approach": "find a ride home by matching with an open seat heading the same way"
+}
